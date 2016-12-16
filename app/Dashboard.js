@@ -25,9 +25,16 @@ class Dashboard extends React.Component {
         <Section {...this.props}
                  id="rendering"
                  lastResult={lastResult}
-                 metrics={['firstPaint', 'SpeedIndex', 'visualComplete']}
+                 metrics={['firstPaint', 'SpeedIndex', 'domInteractive', 'visualComplete']}
                  title="Rendering"
                  yLabel="Time (seconds)"/>
+
+        <Section {...this.props}
+                 id="dom"
+                 lastResult={lastResult}
+                 metrics={['domElements']}
+                 title="DOM Size"
+                 yLabel="Nodes (count)"/>
 
         <Section {...this.props}
                  id="contentBreakdownBytes"
@@ -58,8 +65,8 @@ class Dashboard extends React.Component {
                  ]}
                  title="Content breakdown (requests)"
                  yLabel="Requests"/>
-        
-        {videoFrames.length ? 
+
+        {videoFrames.length ?
           <div className="c-Section">
             <h3 className="c-Section__title">Latest filmstrip view</h3>
             <div className="c-Filmstrip">
