@@ -93,6 +93,13 @@ export default {
       unit: 's',
       description: 'The time between the initial request and the browser load event'
     },
+    domInteractive: {
+      color: [195, 125, 146],
+      name: 'Dom interactive',
+      transform: (value) => (value / 1000).toFixed(2),
+      unit: 's',
+      description: 'The time between the initial request and the browser DOMContentLoaded event'
+    },
     firstPaint: {
       color: [173, 138, 100],
       name: 'Start render',
@@ -106,6 +113,13 @@ export default {
       transform: (value) => (value / 1000).toFixed(2),
       unit: 's',
       description: 'The time at which the page has fully finished loading content'
+    },
+    domElements: {
+      color: [3, 181, 170],
+      name: 'DOM elements count',
+      transform: (value) => value,
+      unit: 'num',
+      description: 'Count of dom nodes in initial html'
     },
     SpeedIndex: {
       color: [87, 117, 144],
