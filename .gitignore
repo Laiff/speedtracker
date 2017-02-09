@@ -3,5 +3,5 @@
 _site/
 node_modules/*
 npm-debug.log
-results/*/*
+results/**/*
 .idea/
