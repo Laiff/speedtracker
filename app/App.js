@@ -26,7 +26,7 @@ class App extends React.Component {
       loading: true,
       period: period,
       profile: activeProfile,
-      profiles: window.PROFILES.sort((left, right) => left.localeCompare(right)),
+      profiles: window.PROFILES.sort(),
       results: null,
       tests: window.TESTS
     }
