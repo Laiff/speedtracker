@@ -26,7 +26,7 @@ class App extends React.Component {
       loading: true,
       period: period,
       profile: activeProfile,
-      profiles: window.PROFILES,
+      profiles: window.PROFILES.sort((left, right) => left.localeCompare(right)),
       results: null,
       tests: window.TESTS
     }
@@ -122,10 +122,10 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <TopBar {...this.state} 
+        <TopBar {...this.state}
                 onPeriodChange={this._changePeriod.bind(this)}
                 onProfileChange={this._changeProfile.bind(this)}/>
-        
+
         {this.state.loading ? <Loader/> : <Dashboard {...this.state}/>}
 
         <Footer/>
